@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Crypto</string>
+    <string name="rank">%1$d</string>
+    <string name="current_price">\u20B9%1$.2f</string>
+    <string name="percentage_change_24h">%1$.1f</string>
+    <string name="market_cap">%1$d</string>
+    <string name="rupee">\u20B9%1$d</string>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cryptoOverview"
+            type="com.example.crypto.domain.CryptoOverview" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:padding="3dp"
+            android:src="@drawable/bitcoin_logo_small_coingecko_api"
+            app:imageUrl="@{cryptoOverview.imgSrcUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_logo"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23000002" />
+
+        <TextView
+            android:id="@+id/ticker_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cryptoOverview.ticker}"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/logo_image"
+            app:layout_constraintStart_toStartOf="@id/logo_image"
+            app:layout_constraintTop_toBottomOf="@id/logo_image"
+            tools:text="BTC" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_marketcap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <TextView
+            android:id="@+id/market_cap_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/rupee(cryptoOverview.marketCap)}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_marketcap"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rs26,060,228,551,616" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_percentage_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.58" />
+
+        <TextView
+            android:id="@+id/percentage_change_24h_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/percentage_change_24h(cryptoOverview.percentageChange24h)}"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/market_cap_text"
+            app:layout_constraintEnd_toStartOf="@+id/gl_percentage_change"
+            tools:text="0.9%" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.475" />
+
+        <TextView
+            android:id="@+id/current_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/current_price(cryptoOverview.currentPrice)}"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/market_cap_text"
+            app:layout_constraintEnd_toStartOf="@+id/gl_price"
+            tools:layout_editor_absoluteY="21dp"
+            tools:text="Rs1,358,009" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <TextView
+            android:id="@+id/rank_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/rank(cryptoOverview.rank)}"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/market_cap_text"
+            app:layout_constraintStart_toEndOf="@id/gl_rank"
+            tools:text="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.22" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
