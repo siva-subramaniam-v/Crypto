@@ -1,7 +1,7 @@
 package com.example.crypto.util
 
-fun arrayToString(array: Array<String>) =
-    array.reduce { acc, next -> if (next.isNotBlank()) acc + "\n" + next.removeProtocol() else acc + "" }
+fun listToString(list: List<String>) =
+    list.reduce { acc, next -> if (next.isNotBlank()) acc + "\n" + next.removeProtocol() else acc + "" }
     //array.reduce { acc, next -> if (next.isNotBlank()) acc + next.removeProtocol() + "\n" else acc + "" }
 
 fun String.removeProtocol(): String {

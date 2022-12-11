@@ -5,7 +5,10 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
+import retrofit2.http.Query
+import retrofit2.http.Url
 
 private const val BASE_URL = "https://api.coingecko.com/api/v3/"
 
@@ -24,7 +27,24 @@ interface CryptoApiService {
             List<NetworkCryptoOverView>
 
     @GET("coins/{id}?tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false")
-    suspend fun getDetail(@Path("id") id:String): NetworkCryptoDetail
+    suspend fun getDetail(@Path("id") id: String): NetworkCryptoDetail
+
+    @GET("search")
+    suspend fun search(
+        @Query("query") query: String
+    ): SearchResult
+
+    @GET("exchanges/{id}")
+    suspend fun getExchangeDetail(@Path("id") id: String): ExchangeDetail
+
+
+    // TODO: change base url based on run-time
+    @Headers(
+        "X-RapidAPI-Key: e94cccd0bdmsha32c0871228eb22p182fc3jsn51bec67c0dce",
+        "X-RapidAPI-Host: crypto-news14.p.rapidapi.com"
+    )
+    @GET
+    suspend fun getNews(@Url url: String): List<News>
 }
 
 object Network {

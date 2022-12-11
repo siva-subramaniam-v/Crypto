@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="market"
+            type="com.example.crypto.network.ExchangeDetail.Ticker" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_pair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_trust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <TextView
+            android:id="@+id/pair_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/exchange_pair(market.base, market.target)}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_pair"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BUSD USDT" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/bitcoin_double(market.price.valueInBtc)}"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/pair_text"
+            app:layout_constraintEnd_toStartOf="@id/gl_price"
+            tools:text="81.71" />
+
+        <TextView
+            android:id="@+id/volume_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/bitcoin_double(market.price.valueInUsd)}"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/price_text"
+            app:layout_constraintEnd_toStartOf="@id/gl_volume"
+            tools:text="44,085,213,527" />
+
+        <ImageView
+            android:id="@+id/trust_score_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/trust_score_green"
+            app:layout_constraintBottom_toBottomOf="@id/volume_text"
+            app:layout_constraintEnd_toStartOf="@id/gl_trust"
+            app:layout_constraintTop_toTopOf="@id/volume_text" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -19,3 +19,18 @@ data class CryptoDetail(
     var facebookUsername: String,
     var englishDescription: String,
 )
+
+data class SearchCoin(
+    val id: String,
+    val name: String,
+    val ticker: String,
+    val rank: Long,
+    val imgSrcUrl: String
+)
+
+data class SearchExchange(
+    val id: String,
+    val name: String,
+    val marketType: String,
+    val imgSrcUrl: String
+)

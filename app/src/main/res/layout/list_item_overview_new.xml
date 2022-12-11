@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <ImageView
             android:id="@+id/logo_image"
@@ -28,6 +29,7 @@
             app:layout_constraintVertical_bias="0.23000002" />
 
         <TextView
+            android:fontFamily="@font/inter"
             android:id="@+id/ticker_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,6 +49,7 @@
             app:layout_constraintGuide_percent="0.95" />
 
         <TextView
+            android:fontFamily="@font/inter"
             android:id="@+id/market_cap_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,6 +68,7 @@
             app:layout_constraintGuide_percent="0.58" />
 
         <TextView
+            android:fontFamily="@font/inter"
             android:id="@+id/percentage_change_24h_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,6 +86,7 @@
             app:layout_constraintGuide_percent="0.475" />
 
         <TextView
+            android:fontFamily="@font/inter"
             android:id="@+id/current_price_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,6 +105,7 @@
             app:layout_constraintGuide_percent="0.05" />
 
         <TextView
+            android:fontFamily="@font/inter"
             android:id="@+id/rank_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

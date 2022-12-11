@@ -4,5 +4,19 @@
     <string name="current_price">\u20B9%1$.2f</string>
     <string name="percentage_change_24h">%1$.1f</string>
     <string name="market_cap">%1$d</string>
+
     <string name="rupee">\u20B9%1$d</string>
+    <string name="dollar_long">\u0024%1$d</string>
+    <string name="dollar_double">\u0024%1$.2f</string>
+    <string name="bitcoin_long">\u20BF%1$d</string>
+    <string name="bitcoin_double">\u20BF%1$f</string>
+
+    <string name="search_coin_rank">#%1$d</string>
+    <string name="exchange_rank">Rank #%1$d</string>
+
+    <string name="centralized">Centralized</string>
+
+    <string name="exchange_pair">%1$s %2$s</string>
+
+    <string name="coingecko">CoinGecko</string>
 </resources>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="BTC538810"
+                android:textSize="40sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--    <TextView-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Info"/>-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- guidelines -->
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.02" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.12" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.98" />
+
+                    <!-- 1 -->
+
+                    <ImageView
+                        android:id="@+id/year_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_flag"
+                        app:layout_constraintBottom_toBottomOf="@id/year_established_label"
+                        app:layout_constraintStart_toStartOf="@id/gl_image"
+                        app:layout_constraintTop_toTopOf="@id/year_established_label"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/year_established_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Year established"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/gl_label"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2017"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/year_established_label"
+                        app:layout_constraintEnd_toStartOf="@id/gl_end"
+                        tools:text="2017" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintStart_toEndOf="@id/gl_image"
+                        app:layout_constraintTop_toBottomOf="@id/year_established_label" />
+
+
+                    <!-- 2 -->
+
+                    <ImageView
+                        android:id="@+id/homepage_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_flag"
+                        app:layout_constraintBottom_toBottomOf="@id/homepage_label"
+                        app:layout_constraintStart_toStartOf="@id/gl_image"
+                        app:layout_constraintTop_toTopOf="@id/homepage_label"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/homepage_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Homepage"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/gl_label"
+                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                    <TextView
+                        android:id="@+id/exchange_url_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="www.binance.com/"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/homepage_label"
+                        app:layout_constraintEnd_toStartOf="@id/gl_end"
+                        tools:text="www.binance.com/" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintStart_toEndOf="@id/gl_image"
+                        app:layout_constraintTop_toBottomOf="@id/homepage_label" />
+
+
+                    <!-- 3 -->
+
+                    <ImageView
+                        android:id="@+id/facebook_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_flag"
+                        app:layout_constraintBottom_toBottomOf="@id/facebook_label"
+                        app:layout_constraintStart_toStartOf="@id/gl_image"
+                        app:layout_constraintTop_toTopOf="@id/facebook_label"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/facebook_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Facebook"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/gl_label"
+                        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+                    <TextView
+                        android:id="@+id/facebook_url_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="www.facebook.com/"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/facebook_label"
+                        app:layout_constraintEnd_toStartOf="@id/gl_end"
+                        tools:text="www.facebook.com/" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintStart_toEndOf="@id/gl_image"
+                        app:layout_constraintTop_toBottomOf="@id/facebook_label" />
+
+                    <!-- 4 -->
+
+                    <ImageView
+                        android:id="@+id/reddit_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_flag"
+                        app:layout_constraintBottom_toBottomOf="@id/reddit_label"
+                        app:layout_constraintStart_toStartOf="@id/gl_image"
+                        app:layout_constraintTop_toTopOf="@id/reddit_label"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/reddit_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Reddit"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/gl_label"
+                        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+                    <TextView
+                        android:id="@+id/reddit_url_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="www.reddit.com/"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/reddit_label"
+                        app:layout_constraintEnd_toStartOf="@id/gl_end"
+                        tools:text="www.reddit.com/" />
+
+                    <View
+                        android:id="@+id/divider4"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintStart_toEndOf="@id/gl_image"
+                        app:layout_constraintTop_toBottomOf="@id/reddit_label" />
+
+                    <!-- 5 -->
+
+                    <ImageView
+                        android:id="@+id/twitter_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_flag"
+                        app:layout_constraintBottom_toBottomOf="@id/twitter_label"
+                        app:layout_constraintStart_toStartOf="@id/gl_image"
+                        app:layout_constraintTop_toTopOf="@id/twitter_label"
+                        app:layout_constraintVertical_bias="0.75" />
+
+                    <TextView
+                        android:id="@+id/twitter_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Twitter"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/gl_label"
+                        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+                    <TextView
+                        android:id="@+id/twitter_url_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="www.twitter.com/"
+                        android:textSize="12sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/twitter_label"
+                        app:layout_constraintEnd_toStartOf="@id/gl_end"
+                        tools:text="www.twitter.com/" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
