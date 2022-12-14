@@ -26,6 +26,13 @@ interface CryptoApiService {
     suspend fun getOverviewAsync():
             List<NetworkCryptoOverView>
 
+    // New query for most of the details in coin screen:
+    // https://api.coingecko.com/api/v3/coins/bitcoin?community_data=false&developer_data=false&sparkline=false
+
+    // coin tickers API - https://api.coingecko.com/api/v3/coins/bitcoin/tickers?include_exchange_logo=false&page=1
+
+    // coin chart data (sparkline) - https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=inr&days=1 (Query params: currency, days)
+
     @GET("coins/{id}?tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false")
     suspend fun getDetail(@Path("id") id: String): NetworkCryptoDetail
 

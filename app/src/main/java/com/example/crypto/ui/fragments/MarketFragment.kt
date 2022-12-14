@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.navArgs
-import com.example.crypto.R
-import com.example.crypto.adapters.MarketAdapter
+import com.example.crypto.adapters.recyclerview.MarketAdapter
 import com.example.crypto.databinding.FragmentMarketBinding
 import com.example.crypto.ui.viewmodels.ExchangeViewModel
 

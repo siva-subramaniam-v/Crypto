@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.example.crypto.adapters.ExchangePagerAdapter
+import com.example.crypto.adapters.viewpager.ExchangePagerAdapter
 import com.example.crypto.databinding.FragmentExchangeBinding
 import com.example.crypto.ui.CryptoActivity
 import com.example.crypto.ui.viewmodels.ExchangeViewModel

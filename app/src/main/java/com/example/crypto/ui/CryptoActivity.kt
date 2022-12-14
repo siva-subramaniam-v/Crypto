@@ -12,6 +12,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.crypto.R
 import com.example.crypto.databinding.ActivityCryptoBinding
+import com.example.crypto.util.hide
+import com.example.crypto.util.show
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CryptoActivity : AppCompatActivity() {
@@ -35,21 +37,22 @@ class CryptoActivity : AppCompatActivity() {
         // Hide bottom nav on screens which don't require it
         lifecycleScope.launchWhenResumed {
             navController.addOnDestinationChangedListener { _, destination, _ ->
-                bottomNav.visibility = when (destination.id) { // implement bottomNav.hide() / bottomNav.show() with animation
-                    R.id.detailFragment, R.id.exchangeFragment, R.id.webViewFragment, R.id.newsDetailFragment -> View.GONE
-                    else -> View.VISIBLE
+                when (destination.id) { // implement bottomNav.hide() / bottomNav.show() with animation
+                    R.id.coinFragment, R.id.exchangeFragment, R.id.newsDetailFragment -> bottomNav.hide()
+                    else -> bottomNav.show()
                 }
             }
         }
     }
 
-    // TODO: Change color of exchange trust score drawables with pixolor
-    //  Change colors & appearance in exchange fragment
+    // TODO: Change colors & appearance in exchange fragment
+    //  Change text color and & arrows indicating percentage_change_24h_text in list_item_overview
     //  Implement swipe refresh layout on *required screens
     //  Add recyclerview headers
-    //  Change colors & appearance in search results fragment
     //  Fix News API issue - change to better API
     //  Implement websockets to refresh market data in periodic intervals
+    //  Implement connectivity manager
+    //  Implement gradient color
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.navHostFragment)

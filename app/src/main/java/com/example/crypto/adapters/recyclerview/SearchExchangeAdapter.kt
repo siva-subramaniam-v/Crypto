@@ -1,17 +1,20 @@
-package com.example.crypto.adapters
+package com.example.crypto.adapters.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crypto.databinding.ListItemOverviewNewBinding
-import com.example.crypto.domain.CryptoOverview
+import com.example.crypto.databinding.ListItemSearchExchangeBinding
+import com.example.crypto.network.SearchResult.Exchange
 
-class OverviewAdapter :
-    ListAdapter<CryptoOverview, OverviewAdapter.ViewHolder>(OverviewDiffCallback()) {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+class SearchExchangeAdapter : ListAdapter<Exchange, SearchExchangeAdapter.ViewHolder>(
+    ExchangeDiffCallback()
+) {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
         return ViewHolder.from(parent)
     }
 
@@ -26,13 +29,13 @@ class OverviewAdapter :
         this.clickListener = clickListener
     }
 
-    class ViewHolder private constructor(private val binding: ListItemOverviewNewBinding) :
+    class ViewHolder private constructor(private val binding: ListItemSearchExchangeBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
-            item: CryptoOverview,
+            item: Exchange,
             clickListener: ((coinId: String) -> Unit)?
         ) {
-            binding.cryptoOverview = item
+            binding.exchange = item
             clickListener?.let {
                 binding.root.setOnClickListener {
                     clickListener.invoke(item.id)
@@ -43,19 +46,19 @@ class OverviewAdapter :
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ListItemOverviewNewBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemSearchExchangeBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
             }
         }
     }
 }
 
-class OverviewDiffCallback : DiffUtil.ItemCallback<CryptoOverview>() {
-    override fun areItemsTheSame(oldItem: CryptoOverview, newItem: CryptoOverview): Boolean {
+class ExchangeDiffCallback : DiffUtil.ItemCallback<Exchange>() {
+    override fun areItemsTheSame(oldItem: Exchange, newItem: Exchange): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: CryptoOverview, newItem: CryptoOverview): Boolean {
+    override fun areContentsTheSame(oldItem: Exchange, newItem: Exchange): Boolean {
         return oldItem == newItem
     }
 }

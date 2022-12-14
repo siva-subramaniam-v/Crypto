@@ -12,7 +12,7 @@
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue_grey_900</item>
-        <!-- Nav bar color. -->
+        <!-- Window Background color. -->
         <item name="android:windowBackground">@color/blue_grey_900</item>
         <!-- Nav bar color. -->
         <item name="android:navigationBarColor">@color/blue_grey_900</item>

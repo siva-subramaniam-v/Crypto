@@ -1,14 +1,14 @@
-package com.example.crypto.adapters
+package com.example.crypto.adapters.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crypto.databinding.ListItemSearchExchangeBinding
-import com.example.crypto.network.SearchResult.Exchange
+import com.example.crypto.databinding.ListItemSearchCoinBinding
+import com.example.crypto.network.SearchResult.Coin
 
-class SearchExchangeAdapter : ListAdapter<Exchange, SearchExchangeAdapter.ViewHolder>(ExchangeDiffCallback()) {
+class SearchCoinAdapter : ListAdapter<Coin, SearchCoinAdapter.ViewHolder>(CoinDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -27,13 +27,13 @@ class SearchExchangeAdapter : ListAdapter<Exchange, SearchExchangeAdapter.ViewHo
         this.clickListener = clickListener
     }
 
-    class ViewHolder private constructor(private val binding: ListItemSearchExchangeBinding) :
+    class ViewHolder private constructor(private val binding: ListItemSearchCoinBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
-            item: Exchange,
+            item: Coin,
             clickListener: ((coinId: String) -> Unit)?
         ) {
-            binding.exchange = item
+            binding.coin = item
             clickListener?.let {
                 binding.root.setOnClickListener {
                     clickListener.invoke(item.id)
@@ -44,19 +44,19 @@ class SearchExchangeAdapter : ListAdapter<Exchange, SearchExchangeAdapter.ViewHo
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ListItemSearchExchangeBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemSearchCoinBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
             }
         }
     }
 }
 
-class ExchangeDiffCallback : DiffUtil.ItemCallback<Exchange>() {
-    override fun areItemsTheSame(oldItem: Exchange, newItem: Exchange): Boolean {
+class CoinDiffCallback : DiffUtil.ItemCallback<Coin>() {
+    override fun areItemsTheSame(oldItem: Coin, newItem: Coin): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Exchange, newItem: Exchange): Boolean {
+    override fun areContentsTheSame(oldItem: Coin, newItem: Coin): Boolean {
         return oldItem == newItem
     }
 }

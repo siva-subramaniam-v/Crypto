@@ -16,7 +16,8 @@ class NewsViewModel(application: Application): AndroidViewModel(application) {
     init {
         viewModelScope.launch {
             Log.i("NewsViewModel", "Fetching news...")
-            newsRepository.fetchNews()
+            try { newsRepository.fetchNews() }
+            catch (e: Exception) { e.printStackTrace() }
         }
     }
 }

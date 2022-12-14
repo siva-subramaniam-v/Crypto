@@ -83,10 +83,13 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     // Material Components
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.8.0-beta01'
 
     // Splash Screen
     implementation("androidx.core:core-splashscreen:1.0.0")
+
+    // Chrome custom tabs
+    implementation 'androidx.browser:browser:1.4.0'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

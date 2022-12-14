@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.crypto.adapters.NewsAdapter
+import com.example.crypto.adapters.recyclerview.NewsAdapter
 import com.example.crypto.databinding.FragmentNewsBinding
 import com.example.crypto.ui.viewmodels.NewsViewModel
 import com.example.crypto.ui.viewmodels.factories.NewsViewModelFactory

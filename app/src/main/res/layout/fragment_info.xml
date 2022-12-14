@@ -12,11 +12,11 @@
 
     <!--TODO: Implement swipeRefreshLayout-->
 
+    <!-- android:scrollbars="none" -->
     <ScrollView
         android:id="@+id/main_scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
+        android:layout_height="wrap_content" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -175,7 +175,6 @@
                 android:layout_marginBottom="20dp"
                 android:text="@{detailViewModel.detail.englishDescription}"
                 android:textSize="12sp"
-                android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -184,15 +183,15 @@
 
             <!--TODO: Fix loading animation not in center of screen, hidden by cardView-->
 
-            <ImageView
-                android:id="@+id/loading_animation"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/loading_animation"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <ImageView-->
+<!--                android:id="@+id/loading_animation"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:src="@drawable/loading_animation"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

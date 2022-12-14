@@ -58,12 +58,12 @@
                     android:layout_height="35dp"
                     android:layout_marginEnd="6dp"
                     android:src="@drawable/coingecko_logo"
-                    app:layout_constraintBottom_toBottomOf="@id/logo_title_text"
-                    app:layout_constraintEnd_toStartOf="@id/logo_title_text"
-                    app:layout_constraintTop_toTopOf="@id/logo_title_text" />
+                    app:layout_constraintBottom_toBottomOf="@id/coin_name_text"
+                    app:layout_constraintEnd_toStartOf="@id/coin_name_text"
+                    app:layout_constraintTop_toTopOf="@id/coin_name_text" />
 
                 <TextView
-                    android:id="@+id/logo_title_text"
+                    android:id="@+id/coin_name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
@@ -103,7 +103,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-            tools:listitem="@layout/list_item_overview_new" />
+            tools:listitem="@layout/list_item_overview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,22 +1,21 @@
-package com.example.crypto.adapters
+package com.example.crypto.adapters.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.crypto.databinding.ListItemSearchCoinBinding
-import com.example.crypto.network.SearchResult.Coin
+import com.example.crypto.databinding.ListItemOverviewBinding
+import com.example.crypto.domain.CryptoOverview
 
-class SearchCoinAdapter : ListAdapter<Coin, SearchCoinAdapter.ViewHolder>(CoinDiffCallback()) {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
+class OverviewAdapter :
+    ListAdapter<CryptoOverview, OverviewAdapter.ViewHolder>(OverviewDiffCallback()) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: SearchCoinAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item, clickListener)
     }
@@ -27,13 +26,13 @@ class SearchCoinAdapter : ListAdapter<Coin, SearchCoinAdapter.ViewHolder>(CoinDi
         this.clickListener = clickListener
     }
 
-    class ViewHolder private constructor(private val binding: ListItemSearchCoinBinding) :
+    class ViewHolder private constructor(private val binding: ListItemOverviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
-            item: Coin,
+            item: CryptoOverview,
             clickListener: ((coinId: String) -> Unit)?
         ) {
-            binding.coin = item
+            binding.cryptoOverview = item
             clickListener?.let {
                 binding.root.setOnClickListener {
                     clickListener.invoke(item.id)
@@ -44,19 +43,19 @@ class SearchCoinAdapter : ListAdapter<Coin, SearchCoinAdapter.ViewHolder>(CoinDi
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ListItemSearchCoinBinding.inflate(layoutInflater, parent, false)
+                val binding = ListItemOverviewBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
             }
         }
     }
 }
 
-class CoinDiffCallback : DiffUtil.ItemCallback<Coin>() {
-    override fun areItemsTheSame(oldItem: Coin, newItem: Coin): Boolean {
+class OverviewDiffCallback : DiffUtil.ItemCallback<CryptoOverview>() {
+    override fun areItemsTheSame(oldItem: CryptoOverview, newItem: CryptoOverview): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Coin, newItem: Coin): Boolean {
+    override fun areContentsTheSame(oldItem: CryptoOverview, newItem: CryptoOverview): Boolean {
         return oldItem == newItem
     }
 }

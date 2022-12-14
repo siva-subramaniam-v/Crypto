@@ -10,8 +10,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.crypto.adapters.SearchCoinAdapter
-import com.example.crypto.adapters.SearchExchangeAdapter
+import com.example.crypto.adapters.recyclerview.SearchCoinAdapter
+import com.example.crypto.adapters.recyclerview.SearchExchangeAdapter
 import com.example.crypto.databinding.FragmentSearchBinding
 import com.example.crypto.ui.viewmodels.SearchViewModel
 
@@ -46,7 +46,7 @@ class SearchFragment : Fragment() {
         val coinAdapter = SearchCoinAdapter().also {
             it.setOnclickListener { coinId ->
                 findNavController().navigate(
-                    SearchFragmentDirections.actionSearchFragmentToDetailFragment(coinId)
+                    SearchFragmentDirections.actionSearchFragmentToCoinFragment(coinId)
                 )
             }
         }

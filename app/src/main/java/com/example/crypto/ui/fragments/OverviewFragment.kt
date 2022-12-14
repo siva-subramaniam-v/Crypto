@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.crypto.R
-import com.example.crypto.adapters.OverviewAdapter
+import com.example.crypto.adapters.recyclerview.OverviewAdapter
 import com.example.crypto.databinding.FragmentOverviewBinding
 import com.example.crypto.ui.viewmodels.OverviewViewModel
 
@@ -31,7 +31,7 @@ class OverviewFragment : Fragment() {
         val adapter = OverviewAdapter().also {
             it.setOnclickListener { coinId ->
                 findNavController().navigate(
-                    OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(coinId)
+                    OverviewFragmentDirections.actionOverviewFragmentToCoinFragment(coinId)
                 )
             }
         }
